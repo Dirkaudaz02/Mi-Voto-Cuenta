@@ -1,0 +1,13 @@
+name: Control de calidad 9.5
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  revisar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Auditoría de código y datos
+        run: python3 scripts/revisar.py
